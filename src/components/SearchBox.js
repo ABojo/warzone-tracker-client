@@ -1,12 +1,8 @@
 import { useState } from 'react';
+import platforms from '../utils/platforms';
 import PlatformButton from './PlatformButton';
 
 function SearchBox() {
-  const platforms = [
-    { name: 'Battle.net', icon: 'battle-net', id: 'battle' },
-    { name: 'Playstation', icon: 'playstation', id: 'psn' },
-    { name: 'Xbox Live', icon: 'xbox', id: 'xbl' },
-  ];
   const [username, setUsername] = useState('');
   const [selectedPlatform, setSelectedPlatform] = useState('battle');
 
