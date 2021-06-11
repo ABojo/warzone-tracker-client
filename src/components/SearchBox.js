@@ -1,6 +1,16 @@
+import { useState } from 'react';
+
 function SearchBox() {
+  const platforms = [
+    { name: 'Battle.net', icon: 'battle-net', id: 'battle' },
+    { name: 'Playstation', icon: 'playstation', id: 'psn' },
+    { name: 'Xbox Live', icon: 'xbox', id: 'xbl' },
+  ];
+  const [username, setUsername] = useState('');
+  const [selectedPlatform, setSelectedPlatform] = useState('battle');
+
   return (
-    <div className="p-5 w-11/12 max-w-xl mx-auto bg-true-gray-100 rounded shadow">
+    <div className="p-5 w-11/12 max-w-xl mx-auto bg-true-gray-100 rounded shadow fadeInLeft">
       <div className="mb-6 border-green-500 border-l-8 pl-3">
         <h2 className="mb-2 text-true-gray-800 text-lg">
           Open your Warzone Profile
@@ -11,26 +21,30 @@ function SearchBox() {
       </div>
 
       <div className="mb-3 flex justify-between items-baseline text-sm mx-auto max-w-sm">
-        <button className="flex items-baseline p-2 rounded bg-yellow-300 shadow opacity-100 font-bold">
-          <i className="fab fa-battle-net"></i>
-          <p className="ml-1">Battle.net</p>
-        </button>
-
-        <button className="flex items-baseline bg-true-gray-200 p-2 rounded opacity-50">
-          <i class="fab fa-playstation"></i>
-          <p className="ml-1">Playstation</p>
-        </button>
-
-        <button className="flex items-baseline bg-true-gray-200 p-2 rounded opacity-50">
-          <i className="fab fa-xbox"></i>
-          <p className="ml-1">Xbox Live</p>
-        </button>
+        {platforms.map((platform) => {
+          return (
+            <button
+              onClick={() => setSelectedPlatform(platform.id)}
+              key={platform.id}
+              className={`flex items-baseline p-2 rounded outline-none ${
+                platform.id === selectedPlatform
+                  ? 'bg-yellow-300 shadow opacity-100 font-bold'
+                  : 'bg-true-gray-200 opacity-50'
+              }`}
+            >
+              <i className={`fab fa-${platform.icon}`}></i>
+              <p className="ml-1">{platform.name}</p>
+            </button>
+          );
+        })}
       </div>
       <div className="w-full mb-3 relative">
         <i class="fas fa-user absolute input-icon left-2 text-true-gray-800"></i>
         <input
+          value={username}
+          onChange={(e) => setUsername(e.currentTarget.value)}
           placeholder="Username"
-          className="placeholder-true-gray-500 px-8 py-3 rounded border-none bg-opacity-30 bg-green-100 focus:bg-opacity-100 transition duration-200 text-true-gray-800 w-full outline-none focus:shadow"
+          className="placeholder-true-gray-500 px-8 py-3 rounded border-none bg-opacity-30 bg-green-100 focus:bg-opacity-100 transition duration-200 text-true-gray-800 w-full outline-none"
         />
       </div>
 

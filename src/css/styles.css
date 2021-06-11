@@ -1,11 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;900&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+* {
+  outline: none !important;
+}
+
 .input-icon {
   top: 50%;
   transform: translateY(-50%);
+}
+
+.fadeInLeft {
+  animation: fadeInLeft 1s;
 }
