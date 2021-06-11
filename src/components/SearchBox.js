@@ -12,12 +12,12 @@ function SearchBox() {
 
   return (
     <div className="p-5 w-11/12 max-w-xl mx-auto bg-true-gray-100 rounded shadow fadeInLeft">
-      <div className="mb-6 border-green-500 border-l-8 pl-3">
+      <div className="mb-6">
         <h2 className="mb-2 text-true-gray-800 text-lg">
           Open your Warzone Profile
         </h2>
         <p className="text-sm text-true-gray-400 ">
-          Enter your username and select your platform to view your profile
+          Select your platform and enter your username to view your profile
         </p>
       </div>
 
