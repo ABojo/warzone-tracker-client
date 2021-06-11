@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PlatformButton from './PlatformButton';
 
 function SearchBox() {
   const platforms = [
@@ -23,18 +24,11 @@ function SearchBox() {
       <div className="mb-3 flex justify-between items-baseline text-sm mx-auto max-w-sm">
         {platforms.map((platform) => {
           return (
-            <button
-              onClick={() => setSelectedPlatform(platform.id)}
-              key={platform.id}
-              className={`flex items-baseline p-2 rounded outline-none ${
-                platform.id === selectedPlatform
-                  ? 'bg-yellow-300 shadow opacity-100 font-bold'
-                  : 'bg-true-gray-200 opacity-50'
-              }`}
-            >
-              <i className={`fab fa-${platform.icon}`}></i>
-              <p className="ml-1">{platform.name}</p>
-            </button>
+            <PlatformButton
+              platform={platform}
+              setSelectedPlatform={setSelectedPlatform}
+              selectedPlatform={selectedPlatform}
+            />
           );
         })}
       </div>
