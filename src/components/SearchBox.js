@@ -25,6 +25,7 @@ function SearchBox() {
         {platforms.map((platform) => {
           return (
             <PlatformButton
+              key={platform.id}
               platform={platform}
               setSelectedPlatform={setSelectedPlatform}
               selectedPlatform={selectedPlatform}
@@ -33,7 +34,7 @@ function SearchBox() {
         })}
       </div>
       <div className="w-full mb-3 relative">
-        <i class="fas fa-user absolute input-icon left-2 text-true-gray-800"></i>
+        <i className="fas fa-user absolute input-icon left-2 text-true-gray-800"></i>
         <input
           value={username}
           onChange={(e) => setUsername(e.currentTarget.value)}
@@ -42,7 +43,12 @@ function SearchBox() {
         />
       </div>
 
-      <button className="bg-green-500 px-5 py-3 w-full text-white font-bold text-center rounded hover:bg-green-600 duration-200 transition shadow">
+      <button
+        disabled={!username}
+        className={`px-5 py-3 w-full font-bold text-center rounded duration-200 transition bg-green-500 text-white ${
+          username ? 'hover:bg-green-600 shadow' : 'opacity-30 cursor-default'
+        }`}
+      >
         Search
       </button>
     </div>
