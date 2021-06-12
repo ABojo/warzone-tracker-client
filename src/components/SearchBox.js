@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import platforms from '../utils/platforms';
 import PlatformButton from './PlatformButton';
+import Heading from './Heading';
 import { Link } from 'react-router-dom';
 import React from 'react';
 
@@ -10,14 +11,10 @@ function SearchBox() {
 
   return (
     <React.Fragment>
-      <div className="mb-6">
-        <h2 className="mb-2 text-true-gray-800 text-lg">
-          Track your Warzone Stats
-        </h2>
-        <p className="text-sm text-true-gray-400 ">
-          Select your platform and enter your username below
-        </p>
-      </div>
+      <Heading
+        headingText="Track your Warzone Stats"
+        subText="Select your platform and eneter your username below"
+      />
 
       <div className="mb-3 flex justify-between items-baseline text-sm mx-auto max-w-sm">
         {platforms.map((platform) => {
