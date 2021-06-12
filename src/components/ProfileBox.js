@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import CardGrid from './CardGrid';
+import Heading from './Heading';
 
 function ProfileBox() {
   const { platform, username } = useParams();
@@ -23,23 +24,15 @@ function ProfileBox() {
 
   return (
     <div>
-      <div>
-        <div className="mb-6">
-          <h2 className="mb-2 text-true-gray-800 text-lg">
-            {username} Warzone Player Card
-          </h2>
-          <p className="text-sm text-true-gray-400">
-            View your up to date warzone stats below
-          </p>
-        </div>
-      </div>
+      <Heading
+        headingText={`${username} Warzone Player Card`}
+        subText={`View your up to date warzone stats below`}
+      />
       {userData && <CardGrid profile={userData.profile} />}
-      <h2 className="mb-2 text-true-gray-800 text-lg">
-        {username} Recent Matches
-      </h2>
-      <p className="text-sm text-true-gray-400">
-        View your recent warzone matches below
-      </p>
+      <Heading
+        headingText={`${username} Recent Matches`}
+        subText={`View your recent warzone matches below`}
+      />
     </div>
   );
 }
