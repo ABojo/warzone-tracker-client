@@ -10,10 +10,10 @@ function SearchBox() {
     <div className="p-5 w-11/12 max-w-xl mx-auto bg-true-gray-100 rounded shadow fadeInLeft">
       <div className="mb-6">
         <h2 className="mb-2 text-true-gray-800 text-lg">
-          Open your Warzone Profile
+          Track your Warzone Stats
         </h2>
         <p className="text-sm text-true-gray-400 ">
-          Select your platform and enter your username to view your profile
+          Select your platform and enter your username below
         </p>
       </div>
 
