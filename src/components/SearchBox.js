@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import platforms from '../utils/platforms';
 import PlatformButton from './PlatformButton';
+import { Link } from 'react-router-dom';
 
 function SearchBox() {
   const [username, setUsername] = useState('');
@@ -38,15 +39,15 @@ function SearchBox() {
           className="placeholder-true-gray-500 px-8 py-3 rounded border-none bg-opacity-30 bg-green-100 focus:bg-opacity-100 transition duration-200 text-true-gray-800 w-full outline-none"
         />
       </div>
-
-      <button
+      <Link
         disabled={!username}
-        className={`px-5 py-3 w-full font-bold text-center rounded duration-200 transition bg-green-500 text-white ${
+        to={`/platforms/${selectedPlatform}/usernames/${username}`}
+        className={`block px-5 py-3 w-full font-bold text-center rounded duration-200 transition bg-green-500 text-white ${
           username ? 'hover:bg-green-600 shadow' : 'opacity-30 cursor-default'
         }`}
       >
         Search
-      </button>
+      </Link>
     </div>
   );
 }
