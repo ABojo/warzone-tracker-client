@@ -2,13 +2,14 @@ import { useState } from 'react';
 import platforms from '../utils/platforms';
 import PlatformButton from './PlatformButton';
 import { Link } from 'react-router-dom';
+import React from 'react';
 
 function SearchBox() {
   const [username, setUsername] = useState('');
   const [selectedPlatform, setSelectedPlatform] = useState('battle');
 
   return (
-    <div className="p-5 w-11/12 max-w-xl mx-auto bg-true-gray-100 rounded shadow fadeInLeft">
+    <React.Fragment>
       <div className="mb-6">
         <h2 className="mb-2 text-true-gray-800 text-lg">
           Track your Warzone Stats
@@ -48,7 +49,7 @@ function SearchBox() {
       >
         Search
       </Link>
-    </div>
+    </React.Fragment>
   );
 }
 

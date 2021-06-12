@@ -1,6 +1,7 @@
 import Navbar from './Navbar';
 import SearchBox from './SearchBox';
 import ProfileBox from './ProfileBox';
+import Container from './Container';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
@@ -10,10 +11,14 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/platforms/:platform/usernames/:username">
-            <ProfileBox />
+            <Container>
+              <ProfileBox />
+            </Container>
           </Route>
           <Route path="/">
-            <SearchBox />
+            <Container>
+              <SearchBox />
+            </Container>
           </Route>
         </Switch>
       </Router>
