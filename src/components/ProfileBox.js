@@ -19,6 +19,7 @@ function ProfileBox() {
         `https://warzone-tracker-server.herokuapp.com/api/platforms/${platform}/usernames/${username}`
       );
       const json = await response.json();
+      console.log(json);
 
       if (json.status === 'success') {
         setUserData(json.data);

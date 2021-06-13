@@ -1,3 +1,5 @@
+import formatDate from '../utils/formatDate';
+
 function MatchesGrid(props) {
   const { matches } = props;
   /* Placement, kd, kills, damage, spm */
@@ -11,7 +13,9 @@ function MatchesGrid(props) {
               <p className="text-lg text-true-gray-800 font-bold mr-3">
                 {match.mode}
               </p>
-              <p className="text-sm text-true-gray-500">Jun 12th 12:50PM</p>
+              <p className="text-sm text-true-gray-500">
+                {formatDate(match.startTime)}
+              </p>
             </div>
 
             <div className="grid grid-cols-3 gap-4">
