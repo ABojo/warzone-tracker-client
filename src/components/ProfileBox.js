@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import StatsGrid from './StatsGrid';
 import Heading from './Heading';
 import Spinner from './Spinner';
+import LinkArrow from './LinkArrow';
 import React from 'react';
 
 function ProfileBox() {
@@ -37,6 +38,7 @@ function ProfileBox() {
   } else {
     return (
       <React.Fragment>
+        <LinkArrow to="/" />
         <Heading
           headingText={`${username} Warzone Player Card`}
           subText={`View your up to date warzone stats below`}
