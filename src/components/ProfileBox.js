@@ -5,6 +5,7 @@ import MatchesGrid from './MatchesGrid';
 import Heading from './Heading';
 import Spinner from './Spinner';
 import LinkArrow from './LinkArrow';
+import ProfileUsername from './ProfileUsername';
 import React from 'react';
 import platforms from '../utils/platforms';
 
@@ -42,14 +43,7 @@ function ProfileBox() {
     return (
       <React.Fragment>
         <LinkArrow to="/" />
-        <h1 className="font-bold text-2xl text-center mb-6">
-          <i
-            className={`mr-3 fab fa-${
-              platforms.find((x) => x.id === platform).icon
-            }`}
-          ></i>
-          {username}
-        </h1>
+        <ProfileUsername />
         <StatsGrid profile={userData.profile} />
         <MatchesGrid matches={userData.matches} />
       </React.Fragment>
