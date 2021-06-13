@@ -6,6 +6,7 @@ import Heading from './Heading';
 import Spinner from './Spinner';
 import LinkArrow from './LinkArrow';
 import React from 'react';
+import platforms from '../utils/platforms';
 
 function ProfileBox() {
   const { platform, username } = useParams();
@@ -40,6 +41,14 @@ function ProfileBox() {
     return (
       <React.Fragment>
         <LinkArrow to="/" />
+        <h1 className="font-bold text-2xl text-center mb-6">
+          <i
+            className={`mr-3 fab fa-${
+              platforms.find((x) => x.id === platform).icon
+            }`}
+          ></i>
+          {username}
+        </h1>
         <Heading headingText="Global Stats" />
         {userData && <StatsGrid profile={userData.profile} />}
         <Heading headingText="Recent Matches" />
