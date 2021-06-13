@@ -1,4 +1,5 @@
 import formatDate from '../utils/formatDate';
+import Heading from './Heading';
 
 function MatchesGrid(props) {
   const { matches } = props;
@@ -6,6 +7,7 @@ function MatchesGrid(props) {
 
   return (
     <div>
+      <Heading headingText="Recent Matches" />
       {matches.map((match) => {
         return (
           <div className="w-full p-3 bg-purple-100 mb-6 rounded">

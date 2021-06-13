@@ -50,10 +50,8 @@ function ProfileBox() {
           ></i>
           {username}
         </h1>
-        <Heading headingText="Global Stats" />
-        {userData && <StatsGrid profile={userData.profile} />}
-        <Heading headingText="Recent Matches" />
-        {userData && <MatchesGrid matches={userData.matches} />}
+        <StatsGrid profile={userData.profile} />
+        <MatchesGrid matches={userData.matches} />
       </React.Fragment>
     );
   }
