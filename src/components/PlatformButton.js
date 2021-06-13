@@ -7,7 +7,7 @@ function PlatformButton(props) {
       key={platform.id}
       className={`flex items-baseline p-2 rounded outline-none ${
         platform.id === selectedPlatform
-          ? 'bg-yellow-300 shadow opacity-100 font-bold'
+          ? 'bg-purple-300 shadow opacity-100 font-bold'
           : 'bg-true-gray-200 opacity-50'
       }`}
     >

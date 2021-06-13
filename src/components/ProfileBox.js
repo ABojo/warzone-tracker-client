@@ -32,7 +32,7 @@ function ProfileBox() {
     return (
       <React.Fragment>
         <Heading headingText="Loading data..." />
-        <Spinner colorClass="text-green-500" />
+        <Spinner colorClass="text-purple-500" />
       </React.Fragment>
     );
   } else {

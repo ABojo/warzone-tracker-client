@@ -34,7 +34,7 @@ function SearchBox() {
           value={username}
           onChange={(e) => setUsername(e.currentTarget.value)}
           placeholder="Username"
-          className="placeholder-true-gray-500 px-8 py-3 rounded border-none bg-opacity-30 bg-green-100 focus:bg-opacity-100 transition duration-200 text-true-gray-800 w-full outline-none"
+          className="placeholder-true-gray-500 px-8 py-3 rounded border-none bg-opacity-30 bg-purple-100 focus:bg-opacity-100 transition duration-200 text-true-gray-800 w-full outline-none"
         />
       </div>
       <Link
