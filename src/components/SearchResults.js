@@ -1,14 +1,10 @@
+import React from 'react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import StatsGrid from './StatsGrid';
-import MatchesGrid from './MatchesGrid';
-import LinkArrow from './LinkArrow';
-import ProfileUsername from './ProfileUsername';
 import LoadingMessage from './LoadingMessage';
-import React from 'react';
 import ProfileCard from './ProfileCard';
 
-function ProfileBox() {
+function SearchResults() {
   const { platform, username } = useParams();
   const [userData, setUserData] = useState('');
   const [isLoading, setIsLoading] = useState(true);
@@ -40,4 +36,4 @@ function ProfileBox() {
   }
 }
 
-export default ProfileBox;
+export default SearchResults;
