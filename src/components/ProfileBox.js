@@ -40,15 +40,9 @@ function ProfileBox() {
     return (
       <React.Fragment>
         <LinkArrow to="/" />
-        <Heading
-          headingText={`${username} Warzone Player Card`}
-          subText={`View your up to date warzone stats below`}
-        />
+        <Heading headingText="Global Stats" />
         {userData && <StatsGrid profile={userData.profile} />}
-        <Heading
-          headingText={`${username} Recent Matches`}
-          subText={`View your recent warzone matches below`}
-        />
+        <Heading headingText="Recent Matches" />
         {userData && <MatchesGrid matches={userData.matches} />}
       </React.Fragment>
     );
