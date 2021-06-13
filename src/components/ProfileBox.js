@@ -3,9 +3,9 @@ import { useParams } from 'react-router-dom';
 import StatsGrid from './StatsGrid';
 import MatchesGrid from './MatchesGrid';
 import Heading from './Heading';
-import Spinner from './Spinner';
 import LinkArrow from './LinkArrow';
 import ProfileUsername from './ProfileUsername';
+import LoadingMessage from './LoadingMessage';
 import React from 'react';
 import platforms from '../utils/platforms';
 
@@ -33,12 +33,7 @@ function ProfileBox() {
   }, []);
 
   if (isLoading) {
-    return (
-      <React.Fragment>
-        <Heading headingText="Loading data..." />
-        <Spinner colorClass="text-purple-500" />
-      </React.Fragment>
-    );
+    return <LoadingMessage />;
   } else {
     return (
       <React.Fragment>
