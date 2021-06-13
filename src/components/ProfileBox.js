@@ -2,12 +2,11 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import StatsGrid from './StatsGrid';
 import MatchesGrid from './MatchesGrid';
-import Heading from './Heading';
 import LinkArrow from './LinkArrow';
 import ProfileUsername from './ProfileUsername';
 import LoadingMessage from './LoadingMessage';
 import React from 'react';
-import platforms from '../utils/platforms';
+import ProfileCard from './ProfileCard';
 
 function ProfileBox() {
   const { platform, username } = useParams();
@@ -36,12 +35,7 @@ function ProfileBox() {
     return <LoadingMessage />;
   } else {
     return (
-      <React.Fragment>
-        <LinkArrow to="/" />
-        <ProfileUsername />
-        <StatsGrid profile={userData.profile} />
-        <MatchesGrid matches={userData.matches} />
-      </React.Fragment>
+      <ProfileCard profile={userData.profile} matches={userData.matches} />
     );
   }
 }
