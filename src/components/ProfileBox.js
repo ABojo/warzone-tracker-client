@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import StatsGrid from './StatsGrid';
+import MatchesGrid from './MatchesGrid';
 import Heading from './Heading';
 import Spinner from './Spinner';
 import LinkArrow from './LinkArrow';
@@ -48,6 +49,7 @@ function ProfileBox() {
           headingText={`${username} Recent Matches`}
           subText={`View your recent warzone matches below`}
         />
+        {userData && <MatchesGrid matches={userData.matches} />}
       </React.Fragment>
     );
   }
