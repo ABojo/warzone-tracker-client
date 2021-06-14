@@ -16,9 +16,7 @@ function App() {
             </Container>
           </Route>
           <Route path="/">
-            <Container>
-              <SearchBox />
-            </Container>
+            <SearchBox />
           </Route>
         </Switch>
       </Router>

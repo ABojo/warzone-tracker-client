@@ -3,17 +3,17 @@ import platforms from '../utils/platforms';
 import PlatformButton from './PlatformButton';
 import Heading from './Heading';
 import { Link } from 'react-router-dom';
-import React from 'react';
+import Container from './Container';
 
 function SearchBox() {
   const [username, setUsername] = useState('');
   const [selectedPlatform, setSelectedPlatform] = useState('battle');
 
   return (
-    <React.Fragment>
+    <Container>
       <Heading
         headingText="Track your Warzone Stats"
-        subText="Select your platform and eneter your username below"
+        subText="Select your platform and enter your username below"
       />
 
       <div className="mb-3 flex justify-between items-baseline text-sm mx-auto max-w-sm">
@@ -48,7 +48,7 @@ function SearchBox() {
       >
         Search
       </Link>
-    </React.Fragment>
+    </Container>
   );
 }
 
