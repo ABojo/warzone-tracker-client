@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import LoadingMessage from './LoadingMessage';
 import ProfileCard from './ProfileCard';
 import ErrorMessage from './ErrorMessage';
+import Container from './Container';
 
 function SearchResults() {
   const { platform, username } = useParams();
@@ -23,17 +24,21 @@ function SearchResults() {
     getUserData();
   }, []);
 
-  if (isLoading) return <LoadingMessage />;
+  const chooseComponent = () => {
+    if (isLoading) return <LoadingMessage />;
 
-  if (response.status === 'error')
-    return <ErrorMessage message={response.message} />;
+    if (response.status === 'error')
+      return <ErrorMessage message={response.message} />;
 
-  return (
-    <ProfileCard
-      profile={response.data.profile}
-      matches={response.data.matches}
-    />
-  );
+    return (
+      <ProfileCard
+        profile={response.data.profile}
+        matches={response.data.matches}
+      />
+    );
+  };
+
+  return <Container>{chooseComponent()}</Container>;
 }
 
 export default SearchResults;
