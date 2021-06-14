@@ -15,10 +15,6 @@
   transform: translateY(-50%);
 }
 
-.fadeInLeft {
-  animation: fadeInLeft 1s;
-}
-
 .spinner {
   font-size: 20px;
   margin: 100px auto;
