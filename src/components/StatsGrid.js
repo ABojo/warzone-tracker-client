@@ -1,4 +1,3 @@
-import Heading from './Heading';
 import React from 'react';
 
 function CardGrid(props) {
@@ -6,7 +5,6 @@ function CardGrid(props) {
 
   return (
     <React.Fragment>
-      <Heading headingText="Global Stats" />
       <div className="grid grid-cols-3 auto-rows-max gap-4 mb-6">
         {Object.keys(profile).map((property) => {
           return (
