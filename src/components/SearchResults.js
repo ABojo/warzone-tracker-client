@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import LoadingMessage from './LoadingMessage';
 import ProfileCard from './ProfileCard';
+import ErrorMessage from './ErrorMessage';
 
 function SearchResults() {
   const { platform, username } = useParams();
@@ -23,7 +24,9 @@ function SearchResults() {
   }, []);
 
   if (isLoading) return <LoadingMessage />;
-  if (response.status === 'error') return <h1>ERROR</h1>;
+
+  if (response.status === 'error')
+    return <ErrorMessage message={response.message} />;
 
   return (
     <ProfileCard
