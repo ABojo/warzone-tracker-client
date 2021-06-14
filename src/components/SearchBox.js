@@ -36,7 +36,7 @@ function SearchBox() {
           placeholder="Username"
           className={`${
             username ? 'bg-opacity-100' : 'bg-opacity-30'
-          } bg-purple-100 placeholder-true-gray-500 px-8 py-3 rounded border-none focus:bg-opacity-100 transition duration-200 text-true-gray-800 w-full outline-none`}
+          } bg-purple-200 placeholder-true-gray-500 px-8 py-3 rounded border-none focus:bg-opacity-100 transition duration-200 text-true-gray-800 w-full outline-none`}
         />
       </div>
       <Link
