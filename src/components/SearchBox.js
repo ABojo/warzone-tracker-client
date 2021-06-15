@@ -2,12 +2,19 @@ import { useState } from 'react';
 import platforms from '../utils/platforms';
 import PlatformButton from './PlatformButton';
 import Heading from './Heading';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Container from './Container';
 
 function SearchBox() {
   const [username, setUsername] = useState('');
   const [selectedPlatform, setSelectedPlatform] = useState('battle');
+  const history = useHistory();
+
+  const onEnter = (e) => {
+    if (username && e.key === 'Enter') {
+      history.push(`/platforms/${selectedPlatform}/usernames/${username}`);
+    }
+  };
 
   return (
     <Container>
@@ -31,6 +38,7 @@ function SearchBox() {
       <div className="w-full mb-3 relative">
         <i className="fas fa-user absolute input-icon left-2 text-true-gray-800"></i>
         <input
+          onKeyPress={onEnter}
           value={username}
           onChange={(e) => setUsername(e.currentTarget.value)}
           placeholder="Username"
