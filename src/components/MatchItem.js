@@ -1,4 +1,5 @@
 import formatDate from '../utils/formatDate';
+import MatchStat from './MatchStat';
 
 function MatchItem(props) {
   const { match } = props;
@@ -14,68 +15,13 @@ function MatchItem(props) {
       </div>
 
       <div className="grid grid-cols-3 gap-4">
-        <div className="row-span-3 flex-col flex">
-          <p className="bg-purple-500 text-white text-center p-1 rounded-t font-bold block">
-            Placing
-          </p>
-          <div className="bg-true-gray-800 bg-opacity-5 rounded p-3 flex items-center justify-center flex-grow	">
-            <p className="font-bold text-6xl">{match.teamPlacement || '?'}</p>
-          </div>
-        </div>
-
-        <div>
-          <p className="bg-purple-500 text-white text-center p-1 rounded-t font-bold text-sm">
-            KD Ratio
-          </p>
-          <div className="bg-true-gray-800 bg-opacity-5 rounded p-3 flex items-center justify-center ">
-            <p className="font-bold text-xl">{match.kdRatio}</p>
-          </div>
-        </div>
-
-        <div>
-          <p className="bg-purple-500 text-white text-center p-1 rounded-t font-bold text-sm">
-            Kills
-          </p>
-          <div className="bg-true-gray-800 bg-opacity-5 rounded p-3 flex items-center justify-center ">
-            <p className="font-bold text-xl">{match.kills}</p>
-          </div>
-        </div>
-
-        <div>
-          <p className="bg-purple-500 text-white text-center p-1 rounded-t font-bold text-sm">
-            Assists
-          </p>
-          <div className="bg-true-gray-800 bg-opacity-5 rounded p-3 flex items-center justify-center ">
-            <p className="font-bold text-xl">{match.assists}</p>
-          </div>
-        </div>
-
-        <div>
-          <p className="bg-purple-500 text-white text-center p-1 rounded-t font-bold text-sm">
-            Damage
-          </p>
-          <div className="bg-true-gray-800 bg-opacity-5 rounded p-3 flex items-center justify-center ">
-            <p className="font-bold text-xl">{match.damageDone}</p>
-          </div>
-        </div>
-
-        <div>
-          <p className="bg-purple-500 text-white text-center p-1 rounded-t font-bold text-sm">
-            % Moving
-          </p>
-          <div className="bg-true-gray-800 bg-opacity-5 rounded p-3 flex items-center justify-center ">
-            <p className="font-bold text-xl">{match.percentTimeMoving}</p>
-          </div>
-        </div>
-
-        <div>
-          <p className="bg-purple-500 text-white text-center p-1 rounded-t font-bold text-sm">
-            SPM
-          </p>
-          <div className="bg-true-gray-800 bg-opacity-5 rounded p-3 flex items-center justify-center ">
-            <p className="font-bold text-xl">{match.scorePerMinute}</p>
-          </div>
-        </div>
+        <MatchStat name="Placing" value={match.teamPlacement} large={true} />
+        <MatchStat name="KD Ratio" value={match.kdRatio} />
+        <MatchStat name="Kills" value={match.kills} />
+        <MatchStat name="Assists" value={match.assists} />
+        <MatchStat name="Damage" value={match.damageDone} />
+        <MatchStat name="% Moving" value={match.percentTimeMoving} />
+        <MatchStat name="SPM" value={match.scorePerMinute} />
       </div>
     </div>
   );
