@@ -8,7 +8,13 @@ function StatsGrid(props) {
     <React.Fragment>
       <div className="grid grid-cols-3 auto-rows-max gap-4 mb-6">
         {Object.keys(profile).map((property) => {
-          return <StatsItem name={property} value={profile[property]} />;
+          return (
+            <StatsItem
+              key={property}
+              name={property}
+              value={profile[property]}
+            />
+          );
         })}
       </div>
     </React.Fragment>

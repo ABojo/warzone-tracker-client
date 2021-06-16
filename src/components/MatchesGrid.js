@@ -8,7 +8,7 @@ function MatchesGrid(props) {
     <div>
       <Heading headingText="Recent Matches" />
       {matches.map((match) => {
-        return <MatchItem match={match} />;
+        return <MatchItem key={match.startTime} match={match} />;
       })}
     </div>
   );
