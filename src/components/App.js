@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Navbar />
         <Switch>
           <Route exact path="/platforms/:platform/usernames/:username">
