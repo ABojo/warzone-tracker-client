@@ -10,9 +10,15 @@ function SearchBox() {
   const [selectedPlatform, setSelectedPlatform] = useState('battle');
   const history = useHistory();
 
+  const getRequestURL = () => {
+    return `/platforms/${selectedPlatform}/usernames/${encodeURIComponent(
+      username
+    )}`;
+  };
+
   const onEnter = (e) => {
     if (username && e.key === 'Enter') {
-      history.push(`/platforms/${selectedPlatform}/usernames/${username}`);
+      history.push(getRequestURL());
     }
   };
 
@@ -49,7 +55,7 @@ function SearchBox() {
       </div>
       <Link
         disabled={!username}
-        to={`/platforms/${selectedPlatform}/usernames/${username}`}
+        to={getRequestURL()}
         className={`block px-5 py-3 w-full font-bold text-center rounded duration-200 transition bg-green-500 text-white ${
           username ? 'hover:bg-green-600 shadow' : 'opacity-30 cursor-default'
         }`}
