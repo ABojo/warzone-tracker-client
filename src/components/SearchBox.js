@@ -5,9 +5,9 @@ import Heading from './Heading';
 import { Link, useHistory } from 'react-router-dom';
 import Container from './Container';
 
-function SearchBox() {
-  const [username, setUsername] = useState('');
-  const [selectedPlatform, setSelectedPlatform] = useState('battle');
+function SearchBox(props) {
+  const { username, setUsername, selectedPlatform, setSelectedPlatform } =
+    props;
   const history = useHistory();
 
   const getRequestURL = () => {
