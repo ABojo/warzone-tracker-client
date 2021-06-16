@@ -11,7 +11,7 @@ function ProfileUsername() {
           platforms.find((x) => x.id === platform).icon
         }`}
       ></i>
-      {username}
+      {decodeURIComponent(username)}
     </h1>
   );
 }
